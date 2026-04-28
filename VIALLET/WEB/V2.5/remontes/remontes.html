@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Remontées mécaniques</title>
+<link rel="icon" type="image/x-icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+    <h1><a href="../index.html" class="logo">Station de ski</a></h1>
+    <nav>
+        <a href="../index.html">Accueil</a>
+        <a href="../pistes/pistes.html">🎿 Pistes</a>
+        <a href="remontes.html">🚠 Remontées</a>
+        <a href="../meteo/meteo.html">🌤️ Météo</a>
+        <a href="webcams.html">Webcams</a>
+    </nav>
+    <a href="../page_login/connexion.php">Connexion</a>
+</header>
+<main>
+    <h2>État des remontées mécaniques</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Ouverture</th>
+                <th>Fermeture</th>
+                <th>État</th>
+            </tr>
+        </thead>
+        <tbody id="remontees-body">
+            <!-- Rempli dynamiquement -->
+        </tbody>
+    </table>
+</main>
+
+<!-- Lien vers le JS externe -->
+<script src="remontes.js"></script>
+</body>
+</html>
