@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Camera IP</title>
+
+<style>
+/* DASHBOARD WEBCAMS */
+.dashboard {
+  max-width: 1100px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+}
+
+/* CARTE CAMERA */
+.camera-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER DE CARTE */
+.card-header {
+  background: var(--bleu-fonce);
+  color: white;
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+/* INDICATEUR LIVE */
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: red;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+
+/* Animation clignotement */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+/* VIDEO */
+video {
+  width: 100%;
+  height: auto;
+  background: black;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* RESET SIMPLE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* COULEURS STATION */
+:root {
+  --bleu: #1e88e5;
+  --bleu-fonce: #0d47a1;
+  --blanc: #ffffff;
+  --gris: #f4f6f8;
+  --texte: #222;
+}
+
+/* PAGE */
+body {
+  background: var(--gris);
+  color: var(--texte);
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(
+    to right,
+    var(--bleu-fonce),
+    var(--bleu)
+  );
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* MENU */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* BOUTON CONNEXION */
+header a {
+  background: white;
+  color: var(--bleu-fonce);
+  padding: 8px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header a:hover {
+  background: #e3f2fd;
+}
+
+/* CONTENU */
+main {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: var(--bleu-fonce);
+}
+
+/* TABLEAUX */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th {
+  background: var(--bleu);
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background: #f1f7ff;
+}
+
+/* FORMULAIRES */
+form {
+  margin: 10px 0;
+}
+
+input, select, button {
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+
+
+button:hover {
+  background: var(--bleu-fonce);
+}
+
+/* ADMIN */
+hr {
+  margin: 30px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  main {
+    margin: 20px;
+  }
+}
+
+
+</style>
+</head>
+<body>
+<header>
+  <h1><a href="../indx1.html" class="logo">Station de ski</a></h1>
+    <nav>
+        <a href="../indx1.html">Accueil</a>
+        <a href="../pistes/pistes.html">🎿 Pistes</a>
+        <a href="../remontes/remontes.html">🚠 Remontées</a>
+        <a href="../meteo/meteo.html">🌤️ Météo</a>
+        <a href="../page_webcams/CameraIP.html">Webcams</a>
+    </nav>
+  <a href="../page_login/connexion.php">Connexion</a>
+</header>
+      
+    </header>
+
+    <div class="dashboard">
+        
+        <div class="camera-card">
+            <div class="card-header">
+                <span> CAM-01 CQL </span>
+                <span class="live-indicator"><span class="dot"></span> LIVE </span>
+            </div>
+            
+            <input type="hidden" id="url-cam1"
+                value="http://192.168.3.3:8083/stream/27aec28e-6181-4753-9acd-0456a75f0289/channel/0/webrtc">
+            
+            <video id="video-cam1" autoplay muted playsinline controls></video>
+        </div>
+
+        <div class="camera-card">
+            <div class="card-header">
+                <span>CAM-02 M0G</span>
+                <span class="live-indicator"><span class="dot"></span> LIVE </span>
+            </div>
+
+            <input type="hidden" id="url-cam2"
+                value="http://192.168.3.3:8083/stream/c3215fb8-a341-4f5b-b09a-46890b956af2/channel/0/webrtc">
+
+            <video id="video-cam2" autoplay muted playsinline controls></video>
+        </div>
+
+    </div>
+
+    <script>
+        setInterval(() => {
+            const now = new Date();
+            document.getElementById('date-display').innerText = now.toLocaleString();
+        }, 1000);
+    </script>
+
+    <script src="CameraIP.js"></script>
+
+</body>
+</html>
