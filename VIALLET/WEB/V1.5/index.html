@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Station de ski</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card h3 {
+  color: var(--bleu-fonce);
+  font-size: 20px;
+}
+
+.card p {
+  line-height: 1.5;
+}
+
+.card a {
+  align-self: flex-start;
+  background: var(--bleu);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.card a:hover {
+  background: var(--bleu-fonce);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1><a href="index.html" class="logo">Station de ski</a></h1>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="pistes.php">🎿 Pistes</a>
+    <a href="remontes.php">🚠 Remontées</a>
+    <a href="meteo.php">🌤️ Météo</a>
+    <a href="webcams.php">Webcams</a>
+  </nav>
+  <a href="login.php">Connexion</a>
+</header>
+
+<main>
+  <h2>Bienvenue à la station</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>🎿 Pistes</h3>
+      <p>Consultez l’état et la difficulté des pistes en temps réel.</p>
+      <a href="pistes.html">Voir les pistes</a>
+    </div>
+
+    <div class="card">
+      <h3>🚡 Remontées</h3>
+      <p>Accédez aux horaires et à l’état des remontées mécaniques.</p>
+      <a href="remontes.html">Voir les remontées</a>
+    </div>
+
+    <div class="card">
+      <h3>❄️ Météo</h3>
+      <p>Conditions météo actuelles en station.</p>
+      <a href="meteo.html">Voir la météo</a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
