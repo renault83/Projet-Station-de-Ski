@@ -1,0 +1,47 @@
+<?php
+require 'meteo.php';
+
+$m = getMeteo($pdo);
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Météo</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" type="image/x-icon" href="favicon.svg">
+</head>
+
+<body>
+
+<header>
+  <h1><a href="../index.html" class="logo">Station de ski</a></h1>
+    <nav>
+        <a href="../index.html">Accueil</a>
+        <a href="../pistes/pistes.html">🎿 Pistes</a>
+        <a href="../remontes/remontes.html">🚠 Remontées</a>
+        <a href="../meteo/meteo.html">🌤️ Météo</a>
+        <a href="../page_webcams/CameraIP.html">Webcams</a>
+    </nav>
+  <a href="../pages_login/connexion.php">Connexion</a>
+</header>
+
+<main>
+  <h2>Conditions météo actuelles</h2>
+
+  <?php if ($m): ?>
+    <ul>
+      <li>🌡️ Température : <?= $m['temperature'] ?> °C</li>
+      <li>💨 Vent : <?= $m['vitesse_vent'] ?> km/h</li>
+      <li>💧 Humidité : <?= $m['humidite'] ?> %</li>
+      <li>❄️ Neige : <?= $m['epaisseur_neige'] ?> cm</li>
+      <li>🕒 Relevé du : <?= date('d/m/Y H:i', strtotime($m['timestamp'])) ?></li>
+    </ul>
+  <?php else: ?>
+    <p>Aucune donnée météo disponible.</p>
+  <?php endif; ?>
+</main>
+
+</body>
+</html>
