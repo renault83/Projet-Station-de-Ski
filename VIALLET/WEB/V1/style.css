@@ -1,0 +1,150 @@
+/* --- Styles généraux --- */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #004080;
+}
+
+a {
+    color: #004080;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Conteneur principal --- */
+body > h1 {
+    margin-top: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* --- Formulaires --- */
+form {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="text"], input[type="password"], input[type="number"], select {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #004080;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0066cc;
+}
+
+/* --- Tables --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    background-color: #004080;
+    color: #fff;
+}
+
+/* --- États colorés --- */
+.etat-ouverte {
+    color: #fff;
+    background-color: #28a745;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+.etat-fermee {
+    color: #fff;
+    background-color: #dc3545;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+.etat-entretien, .etat-maintenance {
+    color: #fff;
+    background-color: #ffc107;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+/* --- Listes --- */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- Messages --- */
+p {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* --- Header links --- */
+a.logout {
+    display: block;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    form {
+        flex-direction: column;
+    }
+
+    th, td {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
