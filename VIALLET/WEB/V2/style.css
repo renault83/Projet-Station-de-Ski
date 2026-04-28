@@ -9,7 +9,7 @@
 /* COULEURS STATION */
 :root {
   --bleu: #1e88e5;
- /* --bleu-fonce: #0d47a1; */
+  --bleu-fonce: #0d47a1;
   --blanc: #ffffff;
   --gris: #f4f6f8;
   --texte: #222;
@@ -25,6 +25,7 @@ body {
 header {
   background: linear-gradient(
     to right,
+    var(--bleu-fonce),
     var(--bleu)
   );
   color: white;
