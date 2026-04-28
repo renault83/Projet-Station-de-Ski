@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Pistes</title>
+<link rel="icon" type="image/x-icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<style>
+
+</style>
+</head>
+
+<body>
+<header>
+  <h1><a href="../index.html" class="logo">Station de ski</a></h1>
+  <nav>
+    <a href="../index.html">Accueil</a>
+    <a href="../pistes/pistes.html">🎿Pistes</a>
+    <a href="../remontes/remontes.html">🚠Remontées</a>
+    <a href="../meteo/meteo.html">🌤️ Météo</a>
+    <a href="../page_webcams/CameraIP.html">Webcams</a>
+  </nav>
+  <a href="../page_login/connexion.php">Connexion</a>
+</header>
+
+<main>
+  <h2>État des pistes</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Difficulté</th>
+        <th>État</th>
+      </tr>
+    </thead>
+    <tbody id="pistes-body">
+      <!-- rempli dynamiquement par JS -->
+    </tbody>
+  </table>
+</main>
+
+<!-- JS externe -->
+<script src="pistes.js"></script>
+</body>
+</html>
